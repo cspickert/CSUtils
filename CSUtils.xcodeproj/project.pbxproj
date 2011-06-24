@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E82676513B43DB7006D7F94 /* CSFetchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676313B43DB7006D7F94 /* CSFetchRequest.h */; };
+		7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676413B43DB7006D7F94 /* CSFetchRequest.m */; };
+		7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E82676813B43EAF006D7F94 /* CoreData.framework */; };
+		7E82676C13B43F34006D7F94 /* CSManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676A13B43F34006D7F94 /* CSManagedObject.h */; };
+		7E82676D13B43F34006D7F94 /* CSManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676B13B43F34006D7F94 /* CSManagedObject.m */; };
 		7E89EA0113B42F85008D1712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E89EA0013B42F85008D1712 /* Foundation.framework */; };
+		7E89EA1013B42FF1008D1712 /* CSURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */; };
+		7E89EA1113B42FF1008D1712 /* CSURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */; };
+		7E89EA4B13B43AB9008D1712 /* CSOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */; };
+		7E89EA4C13B43AB9008D1712 /* CSOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E82676313B43DB7006D7F94 /* CSFetchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFetchRequest.h; sourceTree = "<group>"; };
+		7E82676413B43DB7006D7F94 /* CSFetchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFetchRequest.m; sourceTree = "<group>"; };
+		7E82676813B43EAF006D7F94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7E82676A13B43F34006D7F94 /* CSManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSManagedObject.h; sourceTree = "<group>"; };
+		7E82676B13B43F34006D7F94 /* CSManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSManagedObject.m; sourceTree = "<group>"; };
 		7E89E9FD13B42F85008D1712 /* libCSUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCSUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E89EA0013B42F85008D1712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7E89EA0413B42F85008D1712 /* CSUtils-Prefix.pch */ = {isa = PBXFileReference; path = "CSUtils-Prefix.pch"; sourceTree = "<group>"; };
+		7E89EA0413B42F85008D1712 /* CSUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSUtils-Prefix.pch"; sourceTree = "<group>"; };
+		7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSURLOperation.h; sourceTree = "<group>"; };
+		7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSURLOperation.m; sourceTree = "<group>"; };
+		7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSOperationQueue.h; sourceTree = "<group>"; };
+		7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSOperationQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */,
 				7E89EA0113B42F85008D1712 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,10 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E82676E13B44073006D7F94 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
 		7E89E9F213B42F84008D1712 = {
 			isa = PBXGroup;
 			children = (
 				7E89EA0213B42F85008D1712 /* CSUtils */,
+				7E82676E13B44073006D7F94 /* Public */,
 				7E89E9FF13B42F85008D1712 /* Frameworks */,
 				7E89E9FE13B42F85008D1712 /* Products */,
 			);
@@ -49,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				7E89EA0013B42F85008D1712 /* Foundation.framework */,
+				7E82676813B43EAF006D7F94 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -57,6 +85,14 @@
 			isa = PBXGroup;
 			children = (
 				7E89EA0313B42F85008D1712 /* Supporting Files */,
+				7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */,
+				7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */,
+				7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */,
+				7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */,
+				7E82676313B43DB7006D7F94 /* CSFetchRequest.h */,
+				7E82676413B43DB7006D7F94 /* CSFetchRequest.m */,
+				7E82676A13B43F34006D7F94 /* CSManagedObject.h */,
+				7E82676B13B43F34006D7F94 /* CSManagedObject.m */,
 			);
 			path = CSUtils;
 			sourceTree = "<group>";
@@ -76,6 +112,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E89EA1013B42FF1008D1712 /* CSURLOperation.h in Headers */,
+				7E89EA4B13B43AB9008D1712 /* CSOperationQueue.h in Headers */,
+				7E82676513B43DB7006D7F94 /* CSFetchRequest.h in Headers */,
+				7E82676C13B43F34006D7F94 /* CSManagedObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +144,9 @@
 /* Begin PBXProject section */
 		7E89E9F413B42F84008D1712 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Cameron Spickert";
+			};
 			buildConfigurationList = 7E89E9F713B42F84008D1712 /* Build configuration list for PBXProject "CSUtils" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -126,6 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E89EA1113B42FF1008D1712 /* CSURLOperation.m in Sources */,
+				7E89EA4C13B43AB9008D1712 /* CSOperationQueue.m in Sources */,
+				7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */,
+				7E82676D13B43F34006D7F94 /* CSManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +262,7 @@
 				7E89EA0913B42F85008D1712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

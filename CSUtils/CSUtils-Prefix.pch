@@ -4,4 +4,37 @@
 
 #ifdef __OBJC__
   #import <Foundation/Foundation.h>
+  #import <CoreData/CoreData.h>
+#endif
+
+// Block typedefs
+
+typedef void (^void_block_t)(void);
+typedef void (^response_block_t)(NSURLResponse *response);
+typedef void (^data_block_t)(NSData *data);
+typedef void (^error_block_t)(NSError *error);
+
+// Debug & assertion macros
+
+#ifdef DEBUG
+	//#define DLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+  #define DLog(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__])
+	#define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
+#else
+	#define DLog(...) do { } while (0)
+	#ifndef NS_BLOCK_ASSERTIONS
+		#define NS_BLOCK_ASSERTIONS
+	#endif
+	#define ALog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#endif
+
+#define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)
+
+#define ACOLOR(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define COLOR(r,g,b) ACOLOR (r,g,b,1)
+
+#ifdef DEBUG
+  #define PROPERTY(propName) NSStringFromSelector(@selector(propName))
+#else
+  #define PROPERTY(propName) @#propName
 #endif
