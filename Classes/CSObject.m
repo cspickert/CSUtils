@@ -101,22 +101,45 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	return [[[self entity] propertiesByName] objectForKey:localField];
 }
 
+//
+// Updating an attribute
+//
+// 1. If the incoming value is [NSNull null], set the attribute to nil.
+// 2. Preprocess values as necessary. Currently, strings are converted to instances of NSDate.
+//
 - (void)updateAttribute:(NSAttributeDescription *)attribute withValue:(id)value {
 	if ([value isEqual:[NSNull null]]) {
 		[self setValue:nil forKey:[attribute name]];
 		return;
 	}
+  //
+  // Do any attribute preprocessing below.
+  //
 	switch ([attribute attributeType]) {
+    //
+    // Convert strings to NSDate instances.
+    //
 		case NSDateAttributeType:
       if ([value isKindOfClass:[NSString class]]) {
         value = [NSDate dateFromZuluString:value];
       }
 			break;
-			// Add cases for converting numbers to strings (or vice versa), etc. if needed
+    //
+    // Add cases for converting numbers to strings (or vice versa), etc. if needed
+    //
+    default:
+      break;
 	}
 	[self setValue:value forKey:[attribute name]];
 }
 
+//
+// Updating a relationship (to-one and to-many)
+//
+// 1. If the incoming value is [NSNull null], set the relationship to nil.
+// 2. Convert incoming value to CSObject instance(s) by recursively invoking +createOrUpdate:options: on the destination class.
+// 3. Handle to-many and to-one cases.
+//
 - (void)updateRelationship:(NSRelationshipDescription *)relationship withValue:(id)value options:(NSDictionary *)options {
 	if ([value isEqual:[NSNull null]]) {
 		value = nil;
@@ -135,6 +158,15 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	}
 }
 
+//
+// Updating an object
+//
+// For each key, value pair in the incoming dictionary:
+//
+// 1. If the model doesn't contain a local property for key, continue.
+// 2. If the key maps to a relationship, call -updateRelationship:withValue:options:.
+// 3. If the key maps to an attribute, call -updateAttribute:withValue:.
+//
 - (void)updateWithParameters:(NSDictionary *)parameters options:(NSDictionary *)options {
 	for (NSString *remoteField in parameters) {
 		NSPropertyDescription *property = [[self class] propertyForRemoteField:remoteField];
@@ -148,13 +180,22 @@ NSInteger const CSDefaultImportBatchSize = 10;
 			ZAssert([property isKindOfClass:[NSAttributeDescription class]], @"Expected attribute, got something else");
 			[self updateAttribute:(NSAttributeDescription *)property withValue:newValue];
 		}
-    SEL didUpdateSelector = NSSelectorFromString([NSString stringWithFormat:@"didImport%@:", [remoteField capitalize]]);
+    //
+    // Give subclasses a chance to post-process updated properties
+    //
+    SEL didUpdateSelector = NSSelectorFromString([NSString stringWithFormat:@"didUpdate%@:", [[property name] capitalize]]);
     if ([self respondsToSelector:didUpdateSelector]) {
       [self performSelector:didUpdateSelector withObject:newValue];
     }
 	}
 }
 
+//
+// Creating an object
+//
+// 1. Create a new object of this class.
+// 2. Call -updateWithParameters:options:.
+//
 + (CSObject *)createWithParameters:(NSDictionary *)parameters options:(NSDictionary *)options {
 	NSManagedObjectContext *context = [options objectForKey:CSManagedObjectContextOptionsKey];
 	if (!context) {
@@ -165,6 +206,13 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	return resource;
 }
 
+//
+// Create or update one object
+//
+// 1. Look for an existing object whose localID == the incoming parameters' remoteIDField value.
+// 2. If found, call -updateWithParameters:options:.
+// 3. Otherwise, call +createWithParameters:options:.
+//
 + (CSObject *)createOrUpdateOne:(NSDictionary *)parameters options:(NSDictionary *)options {
   if (![parameters isKindOfClass:[NSDictionary class]]) {
     parameters = [NSDictionary dictionaryWithObject:parameters forKey:[self remoteIDField]];
@@ -188,6 +236,13 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	return resource;
 }
 
+//
+// Create or update multiple objects
+//
+// For each dict in parametersArray, call +createOrUpdateOne:options:, saving after importing every <batch size> objects.
+//
+// TODO: This can be made more efficient by doing one fetch instead of n fetches. So far no performance problems, though. Improving this plus +createOrUpdate:options:, we could eliminate +createOrUpdateOne:options:.
+//
 + (NSArray *)createOrUpdateAll:(NSArray *)parametersArray options:(NSDictionary *)options {
 	NSMutableArray *resources = [NSMutableArray array];
 	for (id parameters in parametersArray) {
@@ -201,6 +256,11 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	return [NSArray arrayWithArray:resources];
 }
 
+//
+// Create or update one or more objects
+//
+// Generic wrapper for +createOrUpdateAll:options: and +createOrUpdateOne:options:.
+//
 + (NSArray *)createOrUpdate:(id)value options:(NSDictionary *)options {
   if (!options) {
     options = [NSDictionary dictionary];
