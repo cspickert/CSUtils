@@ -10,8 +10,16 @@
 		7E82676513B43DB7006D7F94 /* CSFetchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676313B43DB7006D7F94 /* CSFetchRequest.h */; };
 		7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676413B43DB7006D7F94 /* CSFetchRequest.m */; };
 		7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E82676813B43EAF006D7F94 /* CoreData.framework */; };
-		7E82676C13B43F34006D7F94 /* CSManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676A13B43F34006D7F94 /* CSManagedObject.h */; };
-		7E82676D13B43F34006D7F94 /* CSManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676B13B43F34006D7F94 /* CSManagedObject.m */; };
+		7E82676C13B43F34006D7F94 /* CSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676A13B43F34006D7F94 /* CSObject.h */; };
+		7E82676D13B43F34006D7F94 /* CSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676B13B43F34006D7F94 /* CSObject.m */; };
+		7E82677213B44251006D7F94 /* NSString+Inflections.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677013B44251006D7F94 /* NSString+Inflections.h */; };
+		7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677113B44251006D7F94 /* NSString+Inflections.m */; };
+		7E82677713B442C6006D7F94 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677513B442C6006D7F94 /* RegexKitLite.h */; };
+		7E82677813B442C6006D7F94 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677613B442C6006D7F94 /* RegexKitLite.m */; };
+		7E82677B13B443CB006D7F94 /* CSObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677913B443CB006D7F94 /* CSObjectManager.h */; };
+		7E82677C13B443CB006D7F94 /* CSObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677A13B443CB006D7F94 /* CSObjectManager.m */; };
+		7E82678013B44B82006D7F94 /* NSDate+ZuluString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677E13B44B82006D7F94 /* NSDate+ZuluString.h */; };
+		7E82678113B44B82006D7F94 /* NSDate+ZuluString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677F13B44B82006D7F94 /* NSDate+ZuluString.m */; };
 		7E89EA0113B42F85008D1712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E89EA0013B42F85008D1712 /* Foundation.framework */; };
 		7E89EA1013B42FF1008D1712 /* CSURLOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */; };
 		7E89EA1113B42FF1008D1712 /* CSURLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */; };
@@ -23,11 +31,19 @@
 		7E82676313B43DB7006D7F94 /* CSFetchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFetchRequest.h; sourceTree = "<group>"; };
 		7E82676413B43DB7006D7F94 /* CSFetchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFetchRequest.m; sourceTree = "<group>"; };
 		7E82676813B43EAF006D7F94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7E82676A13B43F34006D7F94 /* CSManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSManagedObject.h; sourceTree = "<group>"; };
-		7E82676B13B43F34006D7F94 /* CSManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSManagedObject.m; sourceTree = "<group>"; };
+		7E82676A13B43F34006D7F94 /* CSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSObject.h; sourceTree = "<group>"; };
+		7E82676B13B43F34006D7F94 /* CSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSObject.m; sourceTree = "<group>"; };
+		7E82677013B44251006D7F94 /* NSString+Inflections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Inflections.h"; sourceTree = "<group>"; };
+		7E82677113B44251006D7F94 /* NSString+Inflections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Inflections.m"; sourceTree = "<group>"; };
+		7E82677513B442C6006D7F94 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		7E82677613B442C6006D7F94 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		7E82677913B443CB006D7F94 /* CSObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSObjectManager.h; sourceTree = "<group>"; };
+		7E82677A13B443CB006D7F94 /* CSObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSObjectManager.m; sourceTree = "<group>"; };
+		7E82677E13B44B82006D7F94 /* NSDate+ZuluString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZuluString.h"; sourceTree = "<group>"; };
+		7E82677F13B44B82006D7F94 /* NSDate+ZuluString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZuluString.m"; sourceTree = "<group>"; };
 		7E89E9FD13B42F85008D1712 /* libCSUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCSUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E89EA0013B42F85008D1712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7E89EA0413B42F85008D1712 /* CSUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSUtils-Prefix.pch"; sourceTree = "<group>"; };
+		7E89EA0413B42F85008D1712 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSURLOperation.h; sourceTree = "<group>"; };
 		7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSURLOperation.m; sourceTree = "<group>"; };
 		7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSOperationQueue.h; sourceTree = "<group>"; };
@@ -50,14 +66,47 @@
 		7E82676E13B44073006D7F94 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				7E82677413B4426F006D7F94 /* RegexKitLite */,
+				7E82676F13B4423B006D7F94 /* Inflections */,
 			);
 			name = Public;
+			sourceTree = "<group>";
+		};
+		7E82676F13B4423B006D7F94 /* Inflections */ = {
+			isa = PBXGroup;
+			children = (
+				7E82677013B44251006D7F94 /* NSString+Inflections.h */,
+				7E82677113B44251006D7F94 /* NSString+Inflections.m */,
+			);
+			name = Inflections;
+			path = Public/Inflections;
+			sourceTree = "<group>";
+		};
+		7E82677413B4426F006D7F94 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				7E82677513B442C6006D7F94 /* RegexKitLite.h */,
+				7E82677613B442C6006D7F94 /* RegexKitLite.m */,
+			);
+			name = RegexKitLite;
+			path = Public/RegexKitLite;
+			sourceTree = "<group>";
+		};
+		7E82677D13B44B62006D7F94 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7E82677E13B44B82006D7F94 /* NSDate+ZuluString.h */,
+				7E82677F13B44B82006D7F94 /* NSDate+ZuluString.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		7E89E9F213B42F84008D1712 = {
 			isa = PBXGroup;
 			children = (
-				7E89EA0213B42F85008D1712 /* CSUtils */,
+				7E89EA0413B42F85008D1712 /* Prefix.pch */,
+				7E89EA0213B42F85008D1712 /* Classes */,
+				7E82677D13B44B62006D7F94 /* Categories */,
 				7E82676E13B44073006D7F94 /* Public */,
 				7E89E9FF13B42F85008D1712 /* Frameworks */,
 				7E89E9FE13B42F85008D1712 /* Products */,
@@ -81,28 +130,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7E89EA0213B42F85008D1712 /* CSUtils */ = {
+		7E89EA0213B42F85008D1712 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7E89EA0313B42F85008D1712 /* Supporting Files */,
 				7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */,
 				7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */,
 				7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */,
 				7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */,
 				7E82676313B43DB7006D7F94 /* CSFetchRequest.h */,
 				7E82676413B43DB7006D7F94 /* CSFetchRequest.m */,
-				7E82676A13B43F34006D7F94 /* CSManagedObject.h */,
-				7E82676B13B43F34006D7F94 /* CSManagedObject.m */,
+				7E82676A13B43F34006D7F94 /* CSObject.h */,
+				7E82676B13B43F34006D7F94 /* CSObject.m */,
+				7E82677913B443CB006D7F94 /* CSObjectManager.h */,
+				7E82677A13B443CB006D7F94 /* CSObjectManager.m */,
 			);
-			path = CSUtils;
-			sourceTree = "<group>";
-		};
-		7E89EA0313B42F85008D1712 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7E89EA0413B42F85008D1712 /* CSUtils-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,7 +157,11 @@
 				7E89EA1013B42FF1008D1712 /* CSURLOperation.h in Headers */,
 				7E89EA4B13B43AB9008D1712 /* CSOperationQueue.h in Headers */,
 				7E82676513B43DB7006D7F94 /* CSFetchRequest.h in Headers */,
-				7E82676C13B43F34006D7F94 /* CSManagedObject.h in Headers */,
+				7E82676C13B43F34006D7F94 /* CSObject.h in Headers */,
+				7E82677213B44251006D7F94 /* NSString+Inflections.h in Headers */,
+				7E82677713B442C6006D7F94 /* RegexKitLite.h in Headers */,
+				7E82677B13B443CB006D7F94 /* CSObjectManager.h in Headers */,
+				7E82678013B44B82006D7F94 /* NSDate+ZuluString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +218,11 @@
 				7E89EA1113B42FF1008D1712 /* CSURLOperation.m in Sources */,
 				7E89EA4C13B43AB9008D1712 /* CSOperationQueue.m in Sources */,
 				7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */,
-				7E82676D13B43F34006D7F94 /* CSManagedObject.m in Sources */,
+				7E82676D13B43F34006D7F94 /* CSObject.m in Sources */,
+				7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */,
+				7E82677813B442C6006D7F94 /* RegexKitLite.m in Sources */,
+				7E82677C13B443CB006D7F94 /* CSObjectManager.m in Sources */,
+				7E82678113B44B82006D7F94 /* NSDate+ZuluString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +274,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CSUtils.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CSUtils/CSUtils-Prefix.pch";
+				GCC_PREFIX_HEADER = Prefix.pch;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -236,7 +286,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/CSUtils.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CSUtils/CSUtils-Prefix.pch";
+				GCC_PREFIX_HEADER = Prefix.pch;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -1,0 +1,6 @@
+[submodule "Public/Inflections"]
+	path = Public/Inflections
+	url = git://github.com/adamelliot/Inflections.git
+[submodule "Public/RegexKitLite"]
+	path = Public/RegexKitLite
+	url = git://github.com/wezm/RegexKitLite.git
