@@ -5,11 +5,10 @@ This library contains classes, categories and macros I've extracted from some of
 * Recursively import objects from property lists (nested NSArrays and NSDictionaries).
 * Easy UITableView and UITableViewCell integration.
   
-Although most of the code in this project is my own (aside from the submodules in `Public/`), I was influenced by a couple of other cool projects:
+Although most of the code in this project is my own (aside from the code in `Public` and [these insanely useful macros](http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/)), I was influenced by a couple of other cool projects:
 
 * [ASIHTTPRequest](https://github.com/pokeb/asi-http-request)
 * [CoreResource](https://github.com/mikelaurence/CoreResource)
-
-and I borrowed some ever-useful macros from [this CIMGF post](http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/).
+* (more to be listed later)
 
 I'm planning to keep extracting code from my projects and adding it, hopefully with some unit testing thrown in for good measure. While I do my best to ensure everything compiles, things will probably change and/or break, so please use this as a _reference/starting point only_ for now.
