@@ -46,11 +46,6 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
       [model setupEntity];
 		}
     
-    for (NSEntityDescription *entity in [self managedObjectModel]) {
-      Class model = NSClassFromString([entity managedObjectClassName]);
-      [[self entityDescriptions] setObject:entity forKey:model];
-    }
-    
     [self setPersistentStoreCoordinator:[[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]] autorelease]];
     
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
