@@ -4,3 +4,6 @@
 [submodule "Public/RegexKitLite"]
 	path = Public/RegexKitLite
 	url = git://github.com/wezm/RegexKitLite.git
+[submodule "Public/CoreDataLocalization"]
+	path = Public/CoreDataLocalization
+	url = git@github.com:cspicker/Core-Data-Localization.git
