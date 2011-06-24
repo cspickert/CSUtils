@@ -8,7 +8,7 @@
 
 @class CSFetchedResultsController;
 
-@interface CSTableViewController : UITableViewController
+@interface CSTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 - (id)initWithStyle:(UITableViewStyle)style andFetchController:(CSFetchedResultsController *)fetchController;
 - (void)didSelectObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath;
