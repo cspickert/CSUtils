@@ -47,6 +47,8 @@
 #ifdef DEBUG
   [startDate release];
 #endif
+  [response release];
+  [responseData release];
   [super dealloc];
 }
 
