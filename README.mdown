@@ -1,4 +1,4 @@
-This library contains classes, categories and macros I've extracted from some of my recent iOS projects. Currently, the main focus is on fetching data from URLs, importing the resulting data into a Core Data store and displaying it (primarily in UITableViews). Some features include:
+This library consists of classes, categories and macros I've extracted from some of my recent iOS projects. Currently, the main focus is on fetching data from URLs, importing the resulting data into a Core Data store and displaying it (primarily in UITableViews). Some features include:
 
 * Concurrent NSOperation and block-based URL fetching.
 * Automatic Core Data context/store creation, via singleton `[CSObjectManager sharedManager]`.
