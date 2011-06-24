@@ -17,6 +17,7 @@
 @property (nonatomic, copy) void_block_t finishedBlock;
 @property (nonatomic, copy) error_block_t failedBlock;
 
+@property (nonatomic, retain) NSMutableURLRequest *request;
 @property (nonatomic, readonly) NSURLResponse *response;
 @property (nonatomic, readonly) NSData *responseData;
 

@@ -12,7 +12,6 @@
 
 @property (assign) BOOL isExecuting;
 @property (assign) BOOL isFinished;
-@property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, retain) NSURLConnection *connection;
 #ifdef DEBUG
 @property (nonatomic, retain) NSDate *startDate;
@@ -52,7 +51,7 @@
   [super dealloc];
 }
 
-- (id)initWithURLRequest:(NSURLRequest *)aRequest {
+- (id)initWithURLRequest:(NSMutableURLRequest *)aRequest {
   if ((self = [super init])) {
     [self setRequest:aRequest];
     [self setIsExecuting:NO];

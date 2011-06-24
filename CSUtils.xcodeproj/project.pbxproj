@@ -38,6 +38,17 @@
 		7ED77D0F13B4E937008C8118 /* NSEntityDescription+LocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED77D0B13B4E937008C8118 /* NSEntityDescription+LocalizedName.m */; };
 		7ED77D1013B4E937008C8118 /* NSPropertyDescription+LocalizedName.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED77D0C13B4E937008C8118 /* NSPropertyDescription+LocalizedName.h */; };
 		7ED77D1113B4E937008C8118 /* NSPropertyDescription+LocalizedName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED77D0D13B4E937008C8118 /* NSPropertyDescription+LocalizedName.m */; };
+		7ED77D1713B4EBB9008C8118 /* CSAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED77D1513B4EBB9008C8118 /* CSAPIRequest.h */; };
+		7ED77D1813B4EBB9008C8118 /* CSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED77D1613B4EBB9008C8118 /* CSAPIRequest.m */; };
+		7ED77D1B13B4EBC7008C8118 /* CSAPIServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED77D1913B4EBC7008C8118 /* CSAPIServer.h */; };
+		7ED77D1C13B4EBC7008C8118 /* CSAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED77D1A13B4EBC7008C8118 /* CSAPIServer.m */; };
+		7EDB0DED13B4EFA300B19D6D /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDB0DE913B4EFA300B19D6D /* NSString+URLEncoding.h */; };
+		7EDB0DEE13B4EFA300B19D6D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB0DEA13B4EFA300B19D6D /* NSString+URLEncoding.m */; };
+		7EDB0DEF13B4EFA300B19D6D /* NSDictionary+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDB0DEB13B4EFA300B19D6D /* NSDictionary+URLEncoding.h */; };
+		7EDB0DF013B4EFA300B19D6D /* NSDictionary+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB0DEC13B4EFA300B19D6D /* NSDictionary+URLEncoding.m */; };
+		7EDB0DF413B4F22000B19D6D /* CSAPIParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDB0DF213B4F21F00B19D6D /* CSAPIParser.h */; };
+		7EDB0DF513B4F22000B19D6D /* CSAPIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB0DF313B4F21F00B19D6D /* CSAPIParser.m */; };
+		7EDB0DF713B4F46000B19D6D /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +85,17 @@
 		7ED77D0B13B4E937008C8118 /* NSEntityDescription+LocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+LocalizedName.m"; sourceTree = "<group>"; };
 		7ED77D0C13B4E937008C8118 /* NSPropertyDescription+LocalizedName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+LocalizedName.h"; sourceTree = "<group>"; };
 		7ED77D0D13B4E937008C8118 /* NSPropertyDescription+LocalizedName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+LocalizedName.m"; sourceTree = "<group>"; };
+		7ED77D1513B4EBB9008C8118 /* CSAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIRequest.h; sourceTree = "<group>"; };
+		7ED77D1613B4EBB9008C8118 /* CSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIRequest.m; sourceTree = "<group>"; };
+		7ED77D1913B4EBC7008C8118 /* CSAPIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIServer.h; sourceTree = "<group>"; };
+		7ED77D1A13B4EBC7008C8118 /* CSAPIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIServer.m; sourceTree = "<group>"; };
+		7EDB0DE913B4EFA300B19D6D /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		7EDB0DEA13B4EFA300B19D6D /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		7EDB0DEB13B4EFA300B19D6D /* NSDictionary+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLEncoding.h"; sourceTree = "<group>"; };
+		7EDB0DEC13B4EFA300B19D6D /* NSDictionary+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLEncoding.m"; sourceTree = "<group>"; };
+		7EDB0DF213B4F21F00B19D6D /* CSAPIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIParser.h; sourceTree = "<group>"; };
+		7EDB0DF313B4F21F00B19D6D /* CSAPIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIParser.m; sourceTree = "<group>"; };
+		7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Public/YAJLiOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +106,7 @@
 				7E82678713B4583F006D7F94 /* UIKit.framework in Frameworks */,
 				7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */,
 				7E89EA0113B42F85008D1712 /* Foundation.framework in Frameworks */,
+				7EDB0DF713B4F46000B19D6D /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +116,7 @@
 		7E82676E13B44073006D7F94 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */,
 				7E82677413B4426F006D7F94 /* RegexKitLite */,
 				7E82676F13B4423B006D7F94 /* Inflections */,
 				7ED77CE313B4E937008C8118 /* CoreDataLocalization */,
@@ -123,6 +147,10 @@
 		7E82677D13B44B62006D7F94 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7EDB0DE913B4EFA300B19D6D /* NSString+URLEncoding.h */,
+				7EDB0DEA13B4EFA300B19D6D /* NSString+URLEncoding.m */,
+				7EDB0DEB13B4EFA300B19D6D /* NSDictionary+URLEncoding.h */,
+				7EDB0DEC13B4EFA300B19D6D /* NSDictionary+URLEncoding.m */,
 				7E82677E13B44B82006D7F94 /* NSDate+ZuluString.h */,
 				7E82677F13B44B82006D7F94 /* NSDate+ZuluString.m */,
 			);
@@ -177,17 +205,9 @@
 		7E89EA0213B42F85008D1712 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7ED77D1313B4EB4D008C8118 /* Base */,
 				7E82679413B45BA9006D7F94 /* UIKit-Only */,
-				7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */,
-				7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */,
-				7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */,
-				7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */,
-				7E82676313B43DB7006D7F94 /* CSFetchRequest.h */,
-				7E82676413B43DB7006D7F94 /* CSFetchRequest.m */,
-				7E82676A13B43F34006D7F94 /* CSObject.h */,
-				7E82676B13B43F34006D7F94 /* CSObject.m */,
-				7E82677913B443CB006D7F94 /* CSObjectManager.h */,
-				7E82677A13B443CB006D7F94 /* CSObjectManager.m */,
+				7ED77D1413B4EB65008C8118 /* API-Client */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -202,6 +222,36 @@
 			);
 			name = CoreDataLocalization;
 			path = Public/CoreDataLocalization;
+			sourceTree = "<group>";
+		};
+		7ED77D1313B4EB4D008C8118 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */,
+				7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */,
+				7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */,
+				7E89EA4A13B43AB9008D1712 /* CSOperationQueue.m */,
+				7E82676313B43DB7006D7F94 /* CSFetchRequest.h */,
+				7E82676413B43DB7006D7F94 /* CSFetchRequest.m */,
+				7E82676A13B43F34006D7F94 /* CSObject.h */,
+				7E82676B13B43F34006D7F94 /* CSObject.m */,
+				7E82677913B443CB006D7F94 /* CSObjectManager.h */,
+				7E82677A13B443CB006D7F94 /* CSObjectManager.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		7ED77D1413B4EB65008C8118 /* API-Client */ = {
+			isa = PBXGroup;
+			children = (
+				7ED77D1513B4EBB9008C8118 /* CSAPIRequest.h */,
+				7ED77D1613B4EBB9008C8118 /* CSAPIRequest.m */,
+				7ED77D1913B4EBC7008C8118 /* CSAPIServer.h */,
+				7ED77D1A13B4EBC7008C8118 /* CSAPIServer.m */,
+				7EDB0DF213B4F21F00B19D6D /* CSAPIParser.h */,
+				7EDB0DF313B4F21F00B19D6D /* CSAPIParser.m */,
+			);
+			name = "API-Client";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +275,11 @@
 				7E82679213B45AA8006D7F94 /* CSObjectCell.h in Headers */,
 				7ED77D0E13B4E937008C8118 /* NSEntityDescription+LocalizedName.h in Headers */,
 				7ED77D1013B4E937008C8118 /* NSPropertyDescription+LocalizedName.h in Headers */,
+				7ED77D1713B4EBB9008C8118 /* CSAPIRequest.h in Headers */,
+				7ED77D1B13B4EBC7008C8118 /* CSAPIServer.h in Headers */,
+				7EDB0DED13B4EFA300B19D6D /* NSString+URLEncoding.h in Headers */,
+				7EDB0DEF13B4EFA300B19D6D /* NSDictionary+URLEncoding.h in Headers */,
+				7EDB0DF413B4F22000B19D6D /* CSAPIParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +347,11 @@
 				7E82679313B45AA8006D7F94 /* CSObjectCell.m in Sources */,
 				7ED77D0F13B4E937008C8118 /* NSEntityDescription+LocalizedName.m in Sources */,
 				7ED77D1113B4E937008C8118 /* NSPropertyDescription+LocalizedName.m in Sources */,
+				7ED77D1813B4EBB9008C8118 /* CSAPIRequest.m in Sources */,
+				7ED77D1C13B4EBC7008C8118 /* CSAPIServer.m in Sources */,
+				7EDB0DEE13B4EFA300B19D6D /* NSString+URLEncoding.m in Sources */,
+				7EDB0DF013B4EFA300B19D6D /* NSDictionary+URLEncoding.m in Sources */,
+				7EDB0DF513B4F22000B19D6D /* CSAPIParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +402,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/CSUtils.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Public\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -354,9 +421,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/CSUtils.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Public\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
