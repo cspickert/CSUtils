@@ -10,12 +10,6 @@
 #import "CSAPIServer.h"
 #import "CSAPIParser.h"
 
-@interface CSAPIRequest ()
-
-@property (nonatomic, assign) Class model;
-
-@end
-
 @implementation CSAPIRequest
 
 @synthesize model;

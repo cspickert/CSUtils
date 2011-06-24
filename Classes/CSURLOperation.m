@@ -124,10 +124,17 @@
   }
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+  [responseData appendData:data];
+  if ([self dataReceivedBlock]) {
+    [self dataReceivedBlock](data);
+  }
+}
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection {
 #ifdef DEBUG
   NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:[self startDate]];
-  DLog(@"%@ loaded %lu bytes (%0.2f sec)", [[self responseData] length], time);
+  DLog(@"%@ loaded %lu bytes (%0.2f sec)", self, [[self responseData] length], time);
 #endif
   if ([self finishedBlock]) {
     [self finishedBlock]();
