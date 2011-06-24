@@ -2,6 +2,7 @@ This library contains classes, categories and macros I've extracted from some of
 
 * Concurrent NSOperation and block-based URL fetching.
 * Automatic Core Data context/store creation, via singleton `[CSObjectManager sharedManager]`.
+* Dynamic model attribute creation (for "id" fields that would otherwise clutter the model file).
 * Recursively import objects from property lists (nested NSArrays and NSDictionaries).
 * Easy UITableView and UITableViewCell integration.
   
