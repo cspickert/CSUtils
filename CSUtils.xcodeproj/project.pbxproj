@@ -13,7 +13,7 @@
 		7E82676C13B43F34006D7F94 /* CSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676A13B43F34006D7F94 /* CSObject.h */; };
 		7E82676D13B43F34006D7F94 /* CSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676B13B43F34006D7F94 /* CSObject.m */; };
 		7E82677213B44251006D7F94 /* NSString+Inflections.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677013B44251006D7F94 /* NSString+Inflections.h */; };
-		7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677113B44251006D7F94 /* NSString+Inflections.m */; };
+		7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677113B44251006D7F94 /* NSString+Inflections.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E82677713B442C6006D7F94 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677513B442C6006D7F94 /* RegexKitLite.h */; };
 		7E82677B13B443CB006D7F94 /* CSObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677913B443CB006D7F94 /* CSObjectManager.h */; };
 		7E82677C13B443CB006D7F94 /* CSObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677A13B443CB006D7F94 /* CSObjectManager.m */; };
