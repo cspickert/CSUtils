@@ -8,14 +8,19 @@
 
 #import "CSAPIServer.h"
 #import "NSDictionary+URLEncoding.h"
+#import "CSAPIRequest.h"
 
 @interface CSAPIServer ()
+
+@property (nonatomic, strong) NSMutableDictionary *defaultParameters;
+
 @end
 
 static CSAPIServer *sharedServer = nil;
 
 @implementation CSAPIServer
 
+@synthesize defaultParameters;
 @synthesize baseURL;
 
 + (id)sharedServer {
@@ -46,13 +51,31 @@ static CSAPIServer *sharedServer = nil;
   return [[self baseURL] URLByAppendingPathComponent:aPath];
 }
 
+- (NSURLRequest *)URLRequestForPath:(NSString *)path {
+    return [[self mutableURLRequestForPath:path andParameters:nil] copy];
+}
+
+- (NSURLRequest *)URLRequestForPath:(NSString *)path andParameters:(NSDictionary *)parameters {
+    NSURL *requestURL = [self URLForPath:path];
+    NSMutableDictionary *mutableParameters = parameters ? [parameters mutableCopy] : [NSMutableDictionary dictionary];
+    [mutableParameters addEntriesFromDictionary:[self defaultParameters]];
+    if (parameters && [parameters count]) {
+        NSString *newURLString = [[requestURL absoluteString] stringByAppendingFormat:@"?%@", [parameters URLEncodedString]];
+        requestURL = [NSURL URLWithString:newURLString];
+    }
+    return [NSURLRequest requestWithURL:requestURL];
+}
+
 - (NSMutableURLRequest *)mutableURLRequestForPath:(NSString *)path andParameters:(NSDictionary *)parameters {
-  NSURL *requestURL = [self URLForPath:path];
-  if (parameters && [parameters count]) {
-    NSString *newURLString = [[requestURL absoluteString] stringByAppendingFormat:@"?%@", [parameters URLEncodedString]];
-    requestURL = [NSURL URLWithString:newURLString];
-  }
-  return [NSMutableURLRequest requestWithURL:requestURL];
+    return [[self URLRequestForPath:path andParameters:parameters] mutableCopy];
+}
+
+- (CSAPIRequest *)requestForPath:(NSString *)path {
+    return [self requestForPath:path model:nil];
+}
+
+- (CSAPIRequest *)requestForPath:(NSString *)path model:(Class)model {
+    return [[CSAPIRequest alloc] initWithPath:path andParameters:nil andModel:model];
 }
 
 @end
