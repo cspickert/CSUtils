@@ -8,13 +8,6 @@
   #import <CoreData/CoreData.h>
 #endif
 
-// Block typedefs
-
-typedef void (^void_block_t)(void);
-typedef void (^response_block_t)(NSURLResponse *response);
-typedef void (^data_block_t)(NSData *data);
-typedef void (^error_block_t)(NSError *error);
-
 // Debug & assertion macros
 
 #ifdef DEBUG

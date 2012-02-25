@@ -15,4 +15,6 @@
 - (id)initWithPath:(NSString *)path andParameters:(NSDictionary *)parameters;
 - (id)initWithPath:(NSString *)path andParameters:(NSDictionary *)parameters andModel:(Class)aModel;
 
++ (void)setParserClass:(Class)parserClass;
+
 @end

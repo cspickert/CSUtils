@@ -6,6 +6,8 @@
 //  Copyright 2011 Cameron Spickert. All rights reserved.
 //
 
+#import "CSTypedefs.h"
+
 @interface CSURLOperation : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate> {
 @private
   NSMutableData *responseData;

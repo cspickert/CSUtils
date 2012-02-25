@@ -26,6 +26,6 @@
 - (NSMutableURLRequest *)mutableURLRequestForPath:(NSString *)path andParameters:(NSDictionary *)parameters;
 
 - (CSAPIRequest *)requestForPath:(NSString *)path;
-- (CSAPIRequest *)requestForPath:(NSString *)path model:(Class)model;
+- (CSAPIRequest *)requestForPath:(NSString *)path parameters:(NSDictionary *)parameters model:(Class)model;
 
 @end

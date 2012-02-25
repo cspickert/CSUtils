@@ -21,10 +21,9 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
 
 + (id)sharedManager {
   static CSObjectManager *sharedManager = nil;
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    sharedManager = [[self alloc] init];
-  });
+    if (sharedManager == nil) {
+        sharedManager = [[self alloc] init];
+    }
   return sharedManager;
 }
 

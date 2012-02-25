@@ -10,6 +10,7 @@
 
 - (id)initWithModel:(Class)model;
 
+- (id)deserializedData:(NSData *)data;
 - (void)parseDataInBackground:(NSData *)data;
 - (void)parseData:(NSData *)data;
 

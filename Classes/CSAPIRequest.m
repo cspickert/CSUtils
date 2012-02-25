@@ -14,6 +14,19 @@
 
 @synthesize model;
 
+static Class _parserClass = nil;
+
++ (void)setParserClass:(Class)parserClass
+{
+    ZAssert([parserClass isSubclassOfClass:[CSAPIParser class]], @"");
+    _parserClass = parserClass;
+}
+
++ (Class)parserClass
+{
+    return _parserClass;
+}
+
 - (id)initWithPath:(NSString *)path andParameters:(NSDictionary *)parameters {
   NSMutableURLRequest *request = [[CSAPIServer sharedServer] mutableURLRequestForPath:path andParameters:parameters];
   return [self initWithURLRequest:request];
@@ -32,7 +45,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
   // Load incoming data into the persistent store if necessary
   if ([self model]) {
-    CSAPIParser *parser = [[CSAPIParser alloc] initWithModel:[self model]];
+      Class parserClass = [[self class] parserClass];
+    CSAPIParser *parser = [[parserClass alloc] initWithModel:[self model]];
     [parser parseDataInBackground:[self responseData]];
   }
   [super connectionDidFinishLoading:connection];

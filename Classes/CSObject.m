@@ -22,13 +22,13 @@ NSInteger const CSDefaultImportBatchSize = 10;
 @dynamic localID;
 
 + (void)setupEntity {
-  NSAttributeDescription *localIDAttribute = [[[[self entity] properties] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name == %@", [self localIDField]]] lastObject];
-	if (!localIDAttribute) {
-    localIDAttribute = [NSAttributeDescription new];
-    [localIDAttribute setName:[self localIDField]];
-    [localIDAttribute setAttributeType:NSStringAttributeType];
-	}
-  [[self entity] setProperties:[[[self entity] properties] arrayByAddingObject:localIDAttribute]];
+//  NSAttributeDescription *localIDAttribute = [[[[self entity] properties] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name == %@", [self localIDField]]] lastObject];
+//	if (!localIDAttribute) {
+//    localIDAttribute = [NSAttributeDescription new];
+//    [localIDAttribute setName:[self localIDField]];
+//    [localIDAttribute setAttributeType:NSStringAttributeType];
+//	}
+//  [[self entity] setProperties:[[[self entity] properties] arrayByAddingObject:localIDAttribute]];
 }
 
 + (id)objectManager {
@@ -128,6 +128,8 @@ NSInteger const CSDefaultImportBatchSize = 10;
 		case NSDateAttributeType:
       if ([value isKindOfClass:[NSString class]]) {
         value = [NSDate dateFromZuluString:value];
+      } else if ([value isKindOfClass:[NSNumber class]]) {
+          value = [NSDate dateWithTimeIntervalSince1970:[value unsignedIntValue]];
       }
 			break;
     //
@@ -236,7 +238,7 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	[request setFetchLimit:1];
 	NSError *error = nil;
 	CSObject *resource = [[context executeFetchRequest:request error:&error] lastObject];
-  ZAssert(!!error, @"Error fetching %@: %@", self, error);
+  ZAssert(!error, @"Error fetching %@: %@", self, error);
 	if (resource) {
 		[resource updateWithParameters:parameters options:options];
 	} else {

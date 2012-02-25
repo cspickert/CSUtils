@@ -40,6 +40,7 @@ static CSAPIServer *sharedServer = nil;
 - (id)initWithBaseURL:(NSURL *)aBaseURL {
   if ((self = [super init])) {
     [self setBaseURL:aBaseURL];
+      [self setDefaultParameters:[NSMutableDictionary dictionary]];
     if (!sharedServer) {
       [[self class] setSharedServer:self];
     }
@@ -59,8 +60,8 @@ static CSAPIServer *sharedServer = nil;
     NSURL *requestURL = [self URLForPath:path];
     NSMutableDictionary *mutableParameters = parameters ? [parameters mutableCopy] : [NSMutableDictionary dictionary];
     [mutableParameters addEntriesFromDictionary:[self defaultParameters]];
-    if (parameters && [parameters count]) {
-        NSString *newURLString = [[requestURL absoluteString] stringByAppendingFormat:@"?%@", [parameters URLEncodedString]];
+    if (mutableParameters && [mutableParameters count]) {
+        NSString *newURLString = [[requestURL absoluteString] stringByAppendingFormat:@"?%@", [mutableParameters URLEncodedString]];
         requestURL = [NSURL URLWithString:newURLString];
     }
     return [NSURLRequest requestWithURL:requestURL];
@@ -71,10 +72,10 @@ static CSAPIServer *sharedServer = nil;
 }
 
 - (CSAPIRequest *)requestForPath:(NSString *)path {
-    return [self requestForPath:path model:nil];
+    return [self requestForPath:path parameters:nil model:nil];
 }
 
-- (CSAPIRequest *)requestForPath:(NSString *)path model:(Class)model {
+- (CSAPIRequest *)requestForPath:(NSString *)path parameters:(NSDictionary *)parameters model:(Class)model {
     return [[CSAPIRequest alloc] initWithPath:path andParameters:nil andModel:model];
 }
 

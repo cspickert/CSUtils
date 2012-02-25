@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E439B3814F97C19004B7286 /* CSTypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E439B3714F97C19004B7286 /* CSTypedefs.h */; };
 		7E82676513B43DB7006D7F94 /* CSFetchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82676313B43DB7006D7F94 /* CSFetchRequest.h */; };
 		7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82676413B43DB7006D7F94 /* CSFetchRequest.m */; };
 		7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E82676813B43EAF006D7F94 /* CoreData.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E439B3714F97C19004B7286 /* CSTypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSTypedefs.h; sourceTree = "<group>"; };
 		7E82676313B43DB7006D7F94 /* CSFetchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFetchRequest.h; sourceTree = "<group>"; };
 		7E82676413B43DB7006D7F94 /* CSFetchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFetchRequest.m; sourceTree = "<group>"; };
 		7E82676813B43EAF006D7F94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 		7ED77D1313B4EB4D008C8118 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				7E439B3714F97C19004B7286 /* CSTypedefs.h */,
 				7E89EA0E13B42FF1008D1712 /* CSURLOperation.h */,
 				7E89EA0F13B42FF1008D1712 /* CSURLOperation.m */,
 				7E89EA4913B43AB9008D1712 /* CSOperationQueue.h */,
@@ -275,6 +278,7 @@
 				7EDB0DED13B4EFA300B19D6D /* NSString+URLEncoding.h in Headers */,
 				7EDB0DEF13B4EFA300B19D6D /* NSDictionary+URLEncoding.h in Headers */,
 				7EDB0DF413B4F22000B19D6D /* CSAPIParser.h in Headers */,
+				7E439B3814F97C19004B7286 /* CSTypedefs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
