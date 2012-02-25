@@ -8,10 +8,10 @@
 
 @interface CSObjectManager : NSObject
 
-@property (nonatomic, retain) NSMutableDictionary *entityDescriptions;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic) NSMutableDictionary *entityDescriptions;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (id)sharedManager;
 

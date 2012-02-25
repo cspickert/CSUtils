@@ -23,16 +23,13 @@ static CSAPIServer *sharedServer = nil;
 }
 
 + (void)setSharedServer:(CSAPIServer *)aServer {
-  [sharedServer release];
-  sharedServer = [aServer retain];
+  sharedServer = aServer;
 }
 
 - (void)dealloc {
-  [baseURL release];
   if (sharedServer == self) {
     [[self class] setSharedServer:nil];
   }
-  [super dealloc];
 }
 
 - (id)initWithBaseURL:(NSURL *)aBaseURL {

@@ -10,7 +10,7 @@
 
 @interface CSAPIRequest : CSURLOperation
 
-@property (nonatomic, assign) Class model;
+@property (nonatomic, unsafe_unretained) Class model;
 
 - (id)initWithPath:(NSString *)path andParameters:(NSDictionary *)parameters;
 - (id)initWithPath:(NSString *)path andParameters:(NSDictionary *)parameters andModel:(Class)aModel;

@@ -38,7 +38,7 @@ NSInteger const CSObjectCellDefaultHeight = 44.0f;
 	
 	CSObjectCell *cell = (CSObjectCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
-		cell = [[[self alloc] initWithStyle:[self cellStyle] reuseIdentifier:cellIdentifier] autorelease];
+		cell = [[self alloc] initWithStyle:[self cellStyle] reuseIdentifier:cellIdentifier];
 	}
 	
 	[cell configureForObject:object];

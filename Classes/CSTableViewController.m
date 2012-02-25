@@ -13,8 +13,8 @@
 
 @interface CSTableViewController ()
 
-@property (nonatomic, retain) CSFetchedResultsController *fetchController;
-@property (nonatomic, retain) NSTimer *reloadTimer;
+@property (nonatomic) CSFetchedResultsController *fetchController;
+@property (nonatomic) NSTimer *reloadTimer;
 
 @end
 
@@ -23,11 +23,6 @@
 @synthesize fetchController;
 @synthesize reloadTimer;
 
-- (void)dealloc {
-  [fetchController release];
-  [reloadTimer release];
-  [super dealloc];
-}
 
 - (id)initWithStyle:(UITableViewStyle)aStyle andFetchController:(CSFetchedResultsController *)aFetchController {
   if ((self = [super initWithStyle:aStyle])) {

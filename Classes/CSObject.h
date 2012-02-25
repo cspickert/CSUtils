@@ -13,7 +13,7 @@ extern NSString *const CSImportBatchSizeOptionsKey;
 
 @interface CSObject : NSManagedObject
 
-@property (nonatomic, retain) NSString *localID;
+@property (nonatomic) NSString *localID;
 
 + (void)setupEntity;
 + (NSString *)entityName;

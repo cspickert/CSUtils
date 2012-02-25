@@ -18,13 +18,6 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
 @synthesize managedObjectModel;
 @synthesize persistentStoreCoordinator;
 
-- (void)dealloc {
-	[entityDescriptions release];
-	[managedObjectContext release];
-	[managedObjectModel release];
-	[persistentStoreCoordinator release];
-	[super dealloc];
-}
 
 + (id)sharedManager {
   static CSObjectManager *sharedManager = nil;
@@ -46,7 +39,7 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
       [model setupEntity];
 		}
     
-    [self setPersistentStoreCoordinator:[[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]] autorelease]];
+    [self setPersistentStoreCoordinator:[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]]];
     
     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 		NSURL *storeURL = [NSURL fileURLWithPath:[documentsPath stringByAppendingPathComponent:storeName]];
@@ -60,7 +53,7 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
     NSError *error = nil;
     ZAssert(!!addPersistentStore(&error), @"Couldn't create persistent store at %@, %@", storeURL, [error localizedDescription]);
     
-    [self setManagedObjectContext:[[NSManagedObjectContext new] autorelease]];
+    [self setManagedObjectContext:[NSManagedObjectContext new]];
     [[self managedObjectContext] setPersistentStoreCoordinator:[self persistentStoreCoordinator]];
   }
   return self;
@@ -80,7 +73,7 @@ static NSString *const CSObjectManagerDefaultStoreName = @"store.db";
 }
 
 - (NSManagedObjectContext *)newContext {
-  NSManagedObjectContext *context = [[NSManagedObjectContext new] autorelease];
+  NSManagedObjectContext *context = [NSManagedObjectContext new];
   [context setPersistentStoreCoordinator:[self persistentStoreCoordinator]];
   return context;
 }

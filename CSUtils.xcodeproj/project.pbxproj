@@ -15,7 +15,6 @@
 		7E82677213B44251006D7F94 /* NSString+Inflections.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677013B44251006D7F94 /* NSString+Inflections.h */; };
 		7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677113B44251006D7F94 /* NSString+Inflections.m */; };
 		7E82677713B442C6006D7F94 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677513B442C6006D7F94 /* RegexKitLite.h */; };
-		7E82677813B442C6006D7F94 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677613B442C6006D7F94 /* RegexKitLite.m */; };
 		7E82677B13B443CB006D7F94 /* CSObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677913B443CB006D7F94 /* CSObjectManager.h */; };
 		7E82677C13B443CB006D7F94 /* CSObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82677A13B443CB006D7F94 /* CSObjectManager.m */; };
 		7E82678013B44B82006D7F94 /* NSDate+ZuluString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82677E13B44B82006D7F94 /* NSDate+ZuluString.h */; };
@@ -48,7 +47,6 @@
 		7EDB0DF013B4EFA300B19D6D /* NSDictionary+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB0DEC13B4EFA300B19D6D /* NSDictionary+URLEncoding.m */; };
 		7EDB0DF413B4F22000B19D6D /* CSAPIParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EDB0DF213B4F21F00B19D6D /* CSAPIParser.h */; };
 		7EDB0DF513B4F22000B19D6D /* CSAPIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB0DF313B4F21F00B19D6D /* CSAPIParser.m */; };
-		7EDB0DF713B4F46000B19D6D /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,7 +93,6 @@
 		7EDB0DEC13B4EFA300B19D6D /* NSDictionary+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLEncoding.m"; sourceTree = "<group>"; };
 		7EDB0DF213B4F21F00B19D6D /* CSAPIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAPIParser.h; sourceTree = "<group>"; };
 		7EDB0DF313B4F21F00B19D6D /* CSAPIParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAPIParser.m; sourceTree = "<group>"; };
-		7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = Public/YAJLiOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +103,6 @@
 				7E82678713B4583F006D7F94 /* UIKit.framework in Frameworks */,
 				7E82676913B43EAF006D7F94 /* CoreData.framework in Frameworks */,
 				7E89EA0113B42F85008D1712 /* Foundation.framework in Frameworks */,
-				7EDB0DF713B4F46000B19D6D /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +112,6 @@
 		7E82676E13B44073006D7F94 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				7EDB0DF613B4F46000B19D6D /* YAJLiOS.framework */,
 				7E82677413B4426F006D7F94 /* RegexKitLite */,
 				7E82676F13B4423B006D7F94 /* Inflections */,
 				7ED77CE313B4E937008C8118 /* CoreDataLocalization */,
@@ -338,7 +333,6 @@
 				7E82676613B43DB7006D7F94 /* CSFetchRequest.m in Sources */,
 				7E82676D13B43F34006D7F94 /* CSObject.m in Sources */,
 				7E82677313B44251006D7F94 /* NSString+Inflections.m in Sources */,
-				7E82677813B442C6006D7F94 /* RegexKitLite.m in Sources */,
 				7E82677C13B443CB006D7F94 /* CSObjectManager.m in Sources */,
 				7E82678113B44B82006D7F94 /* NSDate+ZuluString.m in Sources */,
 				7E82678513B457BF006D7F94 /* CSTableViewController.m in Sources */,
@@ -401,6 +395,7 @@
 		7E89EA0813B42F85008D1712 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/CSUtils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,6 +403,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -420,6 +416,7 @@
 		7E89EA0913B42F85008D1712 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/CSUtils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,6 +424,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

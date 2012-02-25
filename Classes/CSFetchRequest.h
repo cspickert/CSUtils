@@ -8,8 +8,8 @@
 
 @interface CSFetchRequest : NSFetchRequest
 
-@property (nonatomic, assign) Class model;
-@property (nonatomic, retain) NSURLRequest *remoteRequest;
+@property (nonatomic, unsafe_unretained) Class model;
+@property (nonatomic) NSURLRequest *remoteRequest;
 
 - (id)initWithModel:(Class)model;
 

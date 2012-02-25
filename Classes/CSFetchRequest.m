@@ -14,10 +14,6 @@
 @synthesize model;
 @synthesize remoteRequest;
 
-- (void)dealloc {
-  [remoteRequest release];
-  [super dealloc];
-}
 
 - (id)initWithModel:(Class)aModel {
   if ((self = [super init])) {

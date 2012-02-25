@@ -12,9 +12,9 @@
 
 @property (assign) BOOL isExecuting;
 @property (assign) BOOL isFinished;
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic) NSURLConnection *connection;
 #ifdef DEBUG
-@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) NSDate *startDate;
 #endif
 
 - (void)finish;
@@ -40,16 +40,6 @@
 @synthesize response;
 @synthesize responseData;
 
-- (void)dealloc {
-  [request release];
-  [connection release];
-#ifdef DEBUG
-  [startDate release];
-#endif
-  [response release];
-  [responseData release];
-  [super dealloc];
-}
 
 - (id)initWithURLRequest:(NSMutableURLRequest *)aRequest {
   if ((self = [super init])) {
@@ -79,7 +69,7 @@
   [self setIsExecuting:YES];
   [self setIsFinished:NO];
   
-  [self setConnection:[[[NSURLConnection alloc] initWithRequest:[self request] delegate:self startImmediately:NO] autorelease]];
+  [self setConnection:[[NSURLConnection alloc] initWithRequest:[self request] delegate:self startImmediately:NO]];
   [[self connection] scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
   [[self connection] start];
 }
@@ -115,10 +105,8 @@
     NSHTTPURLResponse *HTTPResponse = (id)aResponse;
     DLog(@"%@ received response: %i", self, [HTTPResponse statusCode]);
   }
-  [responseData release];
   responseData = [NSMutableData new];
-  [response release];
-  response = [aResponse retain];
+  response = aResponse;
   if ([self responseReceivedBlock]) {
     [self responseReceivedBlock](aResponse);
   }

@@ -6,7 +6,7 @@
 //  Copyright 2011 Cameron Spickert. All rights reserved.
 //
 
-@interface CSURLOperation : NSOperation {
+@interface CSURLOperation : NSOperation <NSURLConnectionDelegate, NSURLConnectionDataDelegate> {
 @private
   NSMutableData *responseData;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) void_block_t finishedBlock;
 @property (nonatomic, copy) error_block_t failedBlock;
 
-@property (nonatomic, retain) NSMutableURLRequest *request;
+@property (nonatomic) NSMutableURLRequest *request;
 @property (nonatomic, readonly) NSURLResponse *response;
 @property (nonatomic, readonly) NSData *responseData;
 

@@ -13,8 +13,8 @@
 - (NSString *)stringByEscapingForURLArgument {
 	// Encode all the reserved characters, per RFC 3986
   // (<http://www.ietf.org/rfc/rfc3986.txt>)
-  CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
-	return [(NSString *)escaped autorelease];
+  CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+	return (__bridge NSString *)escaped;
 }
 
 - (NSString *)stringByUnescapingFromURLArgument {

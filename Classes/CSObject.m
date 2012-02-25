@@ -24,7 +24,7 @@ NSInteger const CSDefaultImportBatchSize = 10;
 + (void)setupEntity {
   NSAttributeDescription *localIDAttribute = [[[[self entity] properties] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name == %@", [self localIDField]]] lastObject];
 	if (!localIDAttribute) {
-    localIDAttribute = [[NSAttributeDescription new] autorelease];
+    localIDAttribute = [NSAttributeDescription new];
     [localIDAttribute setName:[self localIDField]];
     [localIDAttribute setAttributeType:NSStringAttributeType];
 	}
@@ -44,11 +44,11 @@ NSInteger const CSDefaultImportBatchSize = 10;
 }
 
 + (NSArray *)defaultSortDescriptors {
-	return [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:[self localIDField] ascending:YES] autorelease]];
+	return [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:[self localIDField] ascending:YES]];
 }
 
 + (CSFetchRequest *)fetchRequest {
-  return [[[CSFetchRequest alloc] initWithModel:self] autorelease];
+  return [[CSFetchRequest alloc] initWithModel:self];
 }
 
 + (NSString *)remoteCollectionPath {
@@ -77,7 +77,10 @@ NSInteger const CSDefaultImportBatchSize = 10;
 + (NSString *)localNameForRemoteField:(NSString *)remoteField {
 	SEL localNameForField = NSSelectorFromString([NSString stringWithFormat:@"localNameFor%@", [remoteField capitalize]]);
 	if ([self respondsToSelector:localNameForField]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 		return [self performSelector:localNameForField withObject:remoteField];
+#pragma clang diagnostic pop
 	}
 	if ([remoteField isEqualToString:[self remoteIDField]]) {
 		return [self localIDField];
@@ -88,7 +91,10 @@ NSInteger const CSDefaultImportBatchSize = 10;
 + (NSString *)remoteNameForLocalField:(NSString *)localField {
 	SEL remoteNameForField = NSSelectorFromString([NSString stringWithFormat:@"remoteNameFor%@", [localField capitalize]]);
 	if ([self respondsToSelector:remoteNameForField]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 		return [self performSelector:remoteNameForField withObject:localField];
+#pragma clang diagnostic pop
 	}
 	if ([localField isEqualToString:[self localIDField]]) {
 		return [self remoteIDField];
@@ -185,7 +191,10 @@ NSInteger const CSDefaultImportBatchSize = 10;
     //
     SEL didUpdateSelector = NSSelectorFromString([NSString stringWithFormat:@"didUpdate%@:", [[property name] capitalize]]);
     if ([self respondsToSelector:didUpdateSelector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
       [self performSelector:didUpdateSelector withObject:newValue];
+#pragma clang diagnostic pop
     }
 	}
 }
@@ -201,7 +210,7 @@ NSInteger const CSDefaultImportBatchSize = 10;
 	if (!context) {
 		context = [[CSObjectManager sharedManager] managedObjectContext];
 	}
-	CSObject *resource = [[[self alloc] initWithEntity:[self entity] insertIntoManagedObjectContext:context] autorelease];
+	CSObject *resource = [[self alloc] initWithEntity:[self entity] insertIntoManagedObjectContext:context];
 	[resource updateWithParameters:parameters options:options];
 	return resource;
 }

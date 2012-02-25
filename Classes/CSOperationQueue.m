@@ -15,9 +15,6 @@
 
 - (void)dealloc {
   [self removeObserver:self forKeyPath:PROPERTY(operationCount)];
-  [startedBlock release];
-  [finishedBlock release];
-  [super dealloc];
 }
 
 - (id)init {

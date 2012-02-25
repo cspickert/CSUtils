@@ -12,9 +12,9 @@
 
 @interface CSAPIParser ()
 
-@property (nonatomic, assign) Class model;
+@property (nonatomic, unsafe_unretained) Class model;
 #ifdef DEBUG
-@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) NSDate *startDate;
 @property (nonatomic, assign) NSInteger importCount;
 #endif
 
@@ -60,22 +60,18 @@
   [self performSelectorInBackground:@selector(parseData:) withObject:data];
 }
 
+- (id)deserializedData:(NSData *)data {
+  return nil;
+}
+
 - (void)parseData:(NSData *)data {
-  [self retain];
-  NSAutoreleasePool *pool = [NSAutoreleasePool new];
+  //NSAutoreleasePool *pool = [NSAutoreleasePool new];
   
 #ifdef DEBUG
   [self setStartDate:[NSDate date]];
 #endif
   
-  NSError *error = nil;
-  YAJLDocument *document = [[[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&error] autorelease];
-  if (error) {
-    [self failWithError:error];
-    goto done;
-  }
-  
-  id JSONObject = [document root];
+  id JSONObject = [self deserializedData:data];
 	
 	// Check for API errors
   //  NSError *apiError = [NSError errorWithAPIError:JSONObject];
@@ -84,7 +80,7 @@
   //		goto done;
   //	}
 	
-	NSManagedObjectContext *importContext = [[[CSObjectManager sharedManager] newContext] autorelease];
+	NSManagedObjectContext *importContext = [[CSObjectManager sharedManager] newContext];
 	id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:importContext queue:nil usingBlock:^(NSNotification *notification) {
 		[[CSObjectManager sharedManager] mergeContext:notification];
 	}];
@@ -104,9 +100,6 @@
 	[importContext reset];
 	
 	[self finish];
-done:
-  [pool drain];
-  [self release];
 }
 
 @end

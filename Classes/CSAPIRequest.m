@@ -34,7 +34,6 @@
   if ([self model]) {
     CSAPIParser *parser = [[CSAPIParser alloc] initWithModel:[self model]];
     [parser parseDataInBackground:[self responseData]];
-    [parser release];
   }
   [super connectionDidFinishLoading:connection];
 }
